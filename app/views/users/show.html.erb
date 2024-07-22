@@ -1,0 +1,21 @@
+<h3>User Data</h3>
+
+<div class="user-data">
+  <div class="user-name">
+    <strong>Name:</strong> <%= @user.name %>
+  </div>
+
+  <div class="user-phone-numbers">
+    <strong>Phone Numbers:</strong>
+    <ul>
+      <% @user.phone_numbers.each do |phone_number| %>
+        <li><%= phone_number.number %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="user-actions">
+    <%= link_to 'Edit', edit_user_path(@user), class: 'btn btn-primary' %>
+    <%= link_to 'Back', users_path, class: 'btn btn-secondary' %>
+  </div>
+</div>
